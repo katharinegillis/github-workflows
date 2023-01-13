@@ -27,10 +27,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Fetch docker cache
-        uses: satackey/action-docker-layer-caching@v0.0.11
-        continue-on-error: true
-
       - name: Build the image(s)
         run: docker compose --env-file ${{ inputs.ENV_FILE }} ${{ inputs.DOCKER_COMPOSE_FILES }} build
 
