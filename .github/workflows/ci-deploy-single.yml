@@ -15,6 +15,9 @@ on:
       SERVICE_NAME:
         required: true
         type: string
+      DOCKER_COMPOSE_FILES:
+        required: true
+        type: string
     secrets:
       SSH_HOST:
         required: true
