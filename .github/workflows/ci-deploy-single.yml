@@ -12,6 +12,9 @@ on:
       DOCKER_COMPOSE_PROJECT:
         required: true
         type: string
+      SERVICE_NAME:
+        required: true
+        type: string
     secrets:
       SSH_HOST:
         required: true
