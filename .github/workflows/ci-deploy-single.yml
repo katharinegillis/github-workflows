@@ -63,4 +63,6 @@ jobs:
           script: |
             cd $DEPLOY_PATH
             chmod +x $DEPLOY_PATH/.deploy/deploy-single.sh
+            echo "$DOCKER_COMPOSE_FILES"
+            echo $DOCKER_COMPOSER_FILES
             $DEPLOY_PATH/.deploy/deploy-single.sh $DOCKER_COMPOSE_PROJECT $SERVICE_NAME "$DOCKER_COMPOSE_FILES"
