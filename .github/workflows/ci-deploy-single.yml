@@ -49,8 +49,8 @@ jobs:
         uses: appleboy/ssh-action@master
         env:
           DEPLOY_PATH: ${{ secrets.DEPLOY_PATH }}
-          DOCKER_COMPOSE_PROJECT: ${{ env.DOCKER_COMPOSE_PROJECT }}
-          SERVICE_NAME: ${{ env.SERVICE_NAME }}
+          DOCKER_COMPOSE_PROJECT: ${{ inputs.DOCKER_COMPOSE_PROJECT }}
+          SERVICE_NAME: ${{ inputs.SERVICE_NAME }}
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
