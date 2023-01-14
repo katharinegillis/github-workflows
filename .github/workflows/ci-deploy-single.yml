@@ -59,7 +59,7 @@ jobs:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_KEY }}
-          envs: DEPLOY_PATH,DOCKER_COMPOSE_PROJECT,SERVICE_NAME
+          envs: DEPLOY_PATH,DOCKER_COMPOSE_PROJECT,SERVICE_NAME,DOCKER_COMPOSE_FILES
           script: |
             cd $DEPLOY_PATH
             chmod +x $DEPLOY_PATH/.deploy/deploy-single.sh
