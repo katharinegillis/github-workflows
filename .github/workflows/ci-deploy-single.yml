@@ -51,6 +51,7 @@ jobs:
           DEPLOY_PATH: ${{ secrets.DEPLOY_PATH }}
           DOCKER_COMPOSE_PROJECT: ${{ inputs.DOCKER_COMPOSE_PROJECT }}
           SERVICE_NAME: ${{ inputs.SERVICE_NAME }}
+          DOCKER_COMPOSE_FILES: ${{ inputs.DOCKER_COMPOSE_FILES }}
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
@@ -59,4 +60,4 @@ jobs:
           script: |
             cd $DEPLOY_PATH
             chmod +x $DEPLOY_PATH/.deploy/deploy-single.sh
-            $DEPLOY_PATH/.deploy/deploy-single.sh $DOCKER_COMPOSE_PROJECT $SERVICE_NAME
+            $DEPLOY_PATH/.deploy/deploy-single.sh $DOCKER_COMPOSE_PROJECT $SERVICE_NAME "$DOCKER_COMPOSE_FILES"
